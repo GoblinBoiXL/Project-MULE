@@ -48,12 +48,13 @@
 }
 
 /* Show tab content based on selected radio */
-input.sheet-tab[value="combat"]:checked ~ .sheet-tab-combat,
-input.sheet-tab[value="attributes"]:checked ~ .sheet-tab-attributes,
-input.sheet-tab[value="inventory"]:checked ~ .sheet-tab-inventory,
-input.sheet-tab[value="perks"]:checked ~ .sheet-tab-perks {
+.sheet-wrapper input.sheet-tab[value="combat"]:checked ~ .sheet-tab-combat,
+.sheet-wrapper input.sheet-tab[value="attributes"]:checked ~ .sheet-tab-attributes,
+.sheet-wrapper input.sheet-tab[value="inventory"]:checked ~ .sheet-tab-inventory,
+.sheet-wrapper input.sheet-tab[value="perks"]:checked ~ .sheet-tab-perks {
   display: block;
 }
+
 
 /* Tabs Styling */
 .tab-label {
