@@ -108,6 +108,14 @@
   flex-direction: column;
 }
 
+label {
+  font-weight: bold;
+  color: var(--light-text);
+  margin-bottom: 4px;
+  font-size: 0.95em;
+  text-shadow: 0 0 2px #ff6a00;
+}
+
 .health-summary {
   padding: 6px 10px;
   background: #2a2a2a;
@@ -168,6 +176,13 @@ button[name="act_repair_armor"] {
   flex-wrap: wrap;
   gap: 15px;
   margin-bottom: 10px;
+}
+
+.weapon-field label {
+  font-weight: bold;
+  color: var(--light-text);
+  margin-bottom: 4px;
+  font-size: 0.95em;
 }
 
 .weapon-field {
