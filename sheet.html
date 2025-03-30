@@ -75,33 +75,34 @@
 
 
     <!-- PRIMARY WEAPON -->
-<div class="weapon">
+<div class="weapon-block">
   <h3>Primary Weapon</h3>
 
-  <div class="row">
-    <div class="field">
+  <div class="weapon-row">
+    <div class="weapon-field">
       <label>Name</label>
       <input type="text" name="attr_primary_name">
     </div>
-
-    <div class="field">
+    <div class="weapon-field">
       <label>AP Cost</label>
       <input type="number" name="attr_primary_ap" value="3">
     </div>
-
-    <div class="field">
+    <div class="weapon-field">
       <label>Ammo</label>
       <input type="text" name="attr_primary_ammo" placeholder="12/16">
     </div>
+    <div class="weapon-field">
+      <label>Range</label>
+      <input type="text" name="attr_primary_range" placeholder="30ft / 90ft">
+    </div>
   </div>
 
-  <div class="row">
-    <div class="field">
+  <div class="weapon-row">
+    <div class="weapon-field">
       <label>Dice Count</label>
       <input type="number" name="attr_primary_dicecount" value="4">
     </div>
-
-    <div class="field">
+    <div class="weapon-field">
       <label>Die Type</label>
       <select name="attr_primary_dietype">
         <option value="4">d4</option>
@@ -111,31 +112,22 @@
         <option value="12">d12</option>
       </select>
     </div>
-
-    <div class="field">
+    <div class="weapon-field">
       <label>Dice Formula</label>
       <input type="text" name="attr_primary_dice" value="@{primary_dicecount}d@{primary_dietype}" disabled>
     </div>
   </div>
 
-  <div class="row">
-    <div class="field">
-      <label>Range</label>
-      <input type="text" name="attr_primary_range" placeholder="30ft / 90ft">
-    </div>
-
-    <div class="field">
+  <div class="weapon-row">
+    <div class="weapon-field" style="flex: 2;">
       <label>Properties</label>
       <textarea name="attr_primary_properties" placeholder="e.g. Explosive, Silenced"></textarea>
     </div>
-
-    <div class="field">
-      <label>&nbsp;</label>
-      <button type="roll" value="&{template:weapon} {{title=@{primary_name}}} {{attack=[[@{primary_dicecount}d@{primary_dietype}!]]}} {{ap=@{primary_ap}}} {{ammo=@{primary_ammo}}} {{range=@{primary_range}}} {{props=@{primary_properties}}}">
-        Fire!
-      </button>
-    </div>
   </div>
+
+  <button type="roll" value="&{template:weapon} {{title=@{primary_name}}} {{attack=[[@{primary_dicecount}d@{primary_dietype}!]]}} {{ap=@{primary_ap}}} {{ammo=@{primary_ammo}}} {{range=@{primary_range}}} {{props=@{primary_properties}}}">
+    🔫 Fire!
+  </button>
 </div>
 
   
