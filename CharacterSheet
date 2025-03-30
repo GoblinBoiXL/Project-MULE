@@ -1,0 +1,44 @@
+<!-- Tab Navigation -->
+<div class="tabs">
+  <input type="radio" name="tab" class="tab-button" value="combat" checked>
+  <span>Combat</span>
+  <input type="radio" name="tab" class="tab-button" value="attributes">
+  <span>Attributes</span>
+  <input type="radio" name="tab" class="tab-button" value="inventory">
+  <span>Inventory</span>
+  <input type="radio" name="tab" class="tab-button" value="perks">
+  <span>Perks</span>
+</div>
+
+<!-- Sheet Content -->
+<div class="sheet-content combat-tab">
+  <h2>Combat</h2>
+  
+  <div class="section">
+    <label>Health</label>
+    <input type="number" name="attr_health" value="30">
+  </div>
+
+  <div class="section">
+    <label>Armor</label>
+    <input type="number" name="attr_armor" value="0">
+  </div>
+
+  <fieldset class="repeating_weapons">
+    <div class="weapon">
+      <label>Weapon Name</label>
+      <input type="text" name="attr_weapon_name">
+
+      <label>Damage Dice</label>
+      <input type="text" name="attr_weapon_dice" placeholder="e.g. 4d6">
+
+      <button type="roll" name="roll_attack" value="&{template:default} {{name=@{weapon_name}}} {{attack=[[@{weapon_dice}]]}}">
+        Attack Roll
+      </button>
+    </div>
+  </fieldset>
+</div>
+
+<div class="sheet-content attributes-tab">Coming soon...</div>
+<div class="sheet-content inventory-tab">Coming soon...</div>
+<div class="sheet-content perks-tab">Coming soon...</div>
