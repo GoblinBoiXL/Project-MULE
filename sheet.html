@@ -30,6 +30,7 @@
   <h2>Combat</h2>
 
   <!-- Health, Max Health & Summary Row -->
+  <div class="health-display">
   <div class="row">
     <div class="field">
       <label>Health</label>
@@ -42,12 +43,15 @@
     </div>
 
     <div class="field">
-      <label>Summary</label>
-      <div class="health-summary">
-        <span name="attr_health"></span> / <span name="attr_health_max"></span>
-      </div>
+      <label>Heal</label>
+      <button type="action" name="act_heal">✚ Heal</button>
     </div>
   </div>
+
+  <div class="health-summary">
+    Health: <span name="attr_health"></span>/<span name="attr_health_max"></span>
+  </div>
+</div>
 
   <!-- Armor Block -->
 <div class="armor-block">
