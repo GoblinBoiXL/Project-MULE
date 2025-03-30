@@ -47,7 +47,21 @@
   color: #ccc;
 }
 
-/* Show tab content based on selected radio */
+.sheet-tab {
+  display: none;
+}
+
+/* Highlight the selected tab */
+.sheet-tab:checked + label.tab-label {
+  background: #222;
+  color: var(--orange);
+  border-bottom: 2px solid var(--orange);
+}
+
+.sheet-tab-content {
+  display: none;
+}
+
 .sheet-wrapper input.sheet-tab[value="combat"]:checked ~ .sheet-tab-combat,
 .sheet-wrapper input.sheet-tab[value="attributes"]:checked ~ .sheet-tab-attributes,
 .sheet-wrapper input.sheet-tab[value="inventory"]:checked ~ .sheet-tab-inventory,
