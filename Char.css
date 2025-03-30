@@ -96,14 +96,16 @@
 
 .row {
   display: flex;
-  gap: 15px;
   flex-wrap: wrap;
-  margin-bottom: 15px;
+  gap: 15px;
+  margin-bottom: 10px;
 }
 
 .field {
   flex: 1;
-  min-width: 120px;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
 }
 
 .health-summary {
