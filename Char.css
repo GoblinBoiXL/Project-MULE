@@ -115,6 +115,29 @@
   border-radius: 4px;
 }
 
+.armor-block {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 2px solid var(--orange);
+  background: #2a2a2a;
+  border-radius: 5px;
+}
+
+.armor-block label {
+  font-weight: bold;
+}
+
+button[name="act_repair_armor"] {
+  width: 100%;
+  padding: 5px;
+  background: var(--orange);
+  color: black;
+  font-weight: bold;
+  border: 1px solid #111;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 .weapon {
   border: 2px solid var(--orange);
   padding: 10px;
