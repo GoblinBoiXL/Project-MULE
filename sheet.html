@@ -133,43 +133,61 @@
   
 
 <!-- SECONDARY WEAPON -->
-<div class="weapon">
+<div class="weapon-block">
   <h3>Secondary Weapon</h3>
 
-  <label>Name</label>
-  <input type="text" name="attr_secondary_name">
+  <div class="weapon-row">
+    <div class="weapon-field">
+      <label>Name</label>
+      <input type="text" name="attr_secondary_name">
+    </div>
+    <div class="weapon-field">
+      <label>AP Cost</label>
+      <input type="number" name="attr_secondary_ap" value="2">
+    </div>
+    <div class="weapon-field">
+      <label>Ammo</label>
+      <input type="text" name="attr_secondary_ammo" placeholder="6/12">
+    </div>
+    <div class="weapon-field">
+      <label>Range</label>
+      <input type="text" name="attr_secondary_range" placeholder="20ft / 60ft">
+    </div>
+  </div>
 
-  <label>Dice Count</label>
-  <input type="number" name="attr_secondary_dicecount" value="2">
+  <div class="weapon-row">
+    <div class="weapon-field">
+      <label>Dice Count</label>
+      <input type="number" name="attr_secondary_dicecount" value="2">
+    </div>
+    <div class="weapon-field">
+      <label>Die Type</label>
+      <select name="attr_secondary_dietype">
+        <option value="4">d4</option>
+        <option value="6">d6</option>
+        <option value="8" selected>d8</option>
+        <option value="10">d10</option>
+        <option value="12">d12</option>
+      </select>
+    </div>
+    <div class="weapon-field">
+      <label>Dice Formula</label>
+      <input type="text" name="attr_secondary_dice" value="@{secondary_dicecount}d@{secondary_dietype}" disabled>
+    </div>
+  </div>
 
-  <label>Die Type</label>
-  <select name="attr_secondary_dietype">
-    <option value="4">d4</option>
-    <option value="6">d6</option>
-    <option value="8" selected>d8</option>
-    <option value="10">d10</option>
-    <option value="12">d12</option>
-  </select>
+  <div class="weapon-row">
+    <div class="weapon-field" style="flex: 2;">
+      <label>Properties</label>
+      <textarea name="attr_secondary_properties" placeholder="e.g. Piercing, Smoke rounds"></textarea>
+    </div>
+  </div>
 
-  <label>Dice Formula</label>
-  <input type="text" name="attr_secondary_dice" value="@{secondary_dicecount}d@{secondary_dietype}" disabled>
-
-  <label>AP Cost</label>
-  <input type="number" name="attr_secondary_ap" value="2">
-
-  <label>Ammo (Current / Max)</label>
-  <input type="text" name="attr_secondary_ammo" placeholder="6/12">
-
-  <label>Range / Max Range</label>
-  <input type="text" name="attr_secondary_range" placeholder="e.g. 20ft / 60ft">
-
-  <label>Properties</label>
-  <textarea name="attr_secondary_properties" placeholder="e.g. Piercing, Smoke rounds"></textarea>
-
-  <button type="roll" value="&{template:weapon} {{title=@{secondary_name}}} {{attack=[[@{secondary_dicecount}d@{secondary_dietype}!]]}} {{ap=@{secondary_ap}}} {{ammo=@{secondary_ammo}}} {{range=@{secondary_range}}}">Fire!
-</button>
+  <button type="roll" value="&{template:weapon} {{title=@{secondary_name}}} {{attack=[[@{secondary_dicecount}d@{secondary_dietype}!]]}} {{ap=@{secondary_ap}}} {{ammo=@{secondary_ammo}}} {{range=@{secondary_range}}} {{props=@{secondary_properties}}}">
+    🔫 Fire!
+  </button>
 </div>
-</div>
+
     
   <div class="sheet-tab-content sheet-tab-attributes">Coming soon...</div>
   <div class="sheet-tab-content sheet-tab-inventory">Coming soon...</div>
