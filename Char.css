@@ -94,15 +94,25 @@
   margin-bottom: 15px;
 }
 
+.row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.field {
+  flex: 1;
+  min-width: 120px;
+}
+
 .health-summary {
-  margin-top: 5px;
-  font-weight: bold;
-  background: #1e1e1e;
-  padding: 5px 10px;
+  padding: 6px 10px;
+  background: #2a2a2a;
   border: 1px solid var(--orange);
-  border-radius: 3px;
-  display: inline-block;
   color: var(--light-text);
+  text-align: center;
+  border-radius: 4px;
 }
 
 .weapon {
