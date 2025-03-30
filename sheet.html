@@ -10,21 +10,22 @@
 </rolltemplate>
 
 <div class="sheet-wrapper">
-  <form class="sheet-main">
+  
   <!-- Tab Selectors -->
-  <input type="radio" name="attr_tab" class="sheet-tab" value="combat" checked>
-  <span class="tab-label" data-tab="combat">Combat</span>
-  
-  <input type="radio" name="attr_tab" class="sheet-tab" value="attributes">
-  <span class="tab-label" data-tab="attributes">Attributes</span>
-  
-  <input type="radio" name="attr_tab" class="sheet-tab" value="inventory">
-  <span class="tab-label" data-tab="inventory">Inventory</span>
-  
-  <input type="radio" name="attr_tab" class="sheet-tab" value="perks">
-  <span class="tab-label" data-tab="perks">Perks</span>
+  <input type="radio" name="attr_tab" class="sheet-tab" value="combat" id="tab-combat" checked>
+  <label class="tab-label" for="tab-combat">Combat</label>
 
-  <!-- Tab Panels -->
+  <input type="radio" name="attr_tab" class="sheet-tab" value="attributes" id="tab-attributes">
+  <label class="tab-label" for="tab-attributes">Attributes</label>
+
+  <input type="radio" name="attr_tab" class="sheet-tab" value="inventory" id="tab-inventory">
+  <label class="tab-label" for="tab-inventory">Inventory</label>
+
+  <input type="radio" name="attr_tab" class="sheet-tab" value="perks" id="tab-perks">
+  <label class="tab-label" for="tab-perks">Perks</label>
+    
+     
+      <!-- Tab Panels --> 
   <div class="sheet-tab-content sheet-tab-combat">
     <h2>Combat</h2>
 
@@ -72,11 +73,17 @@
   <label>Properties</label>
   <textarea name="attr_primary_properties" placeholder="e.g. Explosive, Silenced"></textarea>
 
-<button type="roll" value="&{template:weapon} {{title=AK-47}} {{attack=[[4d6!!]]}} {{ap=3}} {{ammo=20/40}} {{range=30/90}} {{props=explosive}}">
+<button type="roll"
+  value="&{template:weapon} 
+  {{title=@{primary_name}}} 
+  {{attack=[[ @{primary_dicecount}d@{primary_dietype}!! ]]}}
+
+  {{ap=@{primary_ap}}} 
+  {{ammo=@{primary_ammo}}} 
+  {{range=@{primary_range}}} 
+  {{props=@{primary_properties}}}">
   Fire!
 </button>
-
-
 
 
 <!-- SECONDARY WEAPON -->
@@ -122,10 +129,8 @@
     Attack (Secondary)
   </button>
 </div>
-
-
+</div>
+    
   <div class="sheet-tab-content sheet-tab-attributes">Coming soon...</div>
   <div class="sheet-tab-content sheet-tab-inventory">Coming soon...</div>
   <div class="sheet-tab-content sheet-tab-perks">Coming soon...</div>
- </form>
-</div>
