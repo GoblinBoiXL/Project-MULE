@@ -1,0 +1,135 @@
+<rolltemplate class="sheet-rolltemplate-weapon">
+  <div class="sheet-template-container">
+    <div class="sheet-template-header">{{title}}</div>
+    {{#attack}}<div class="sheet-template-row"><span>Attack Roll:</span> {{attack}}</div>{{/attack}}
+    {{#ap}}<div class="sheet-template-row"><span>AP Cost:</span> {{ap}}</div>{{/ap}}
+    {{#ammo}}<div class="sheet-template-row"><span>Ammo:</span> {{ammo}}</div>{{/ammo}}
+    {{#range}}<div class="sheet-template-row"><span>Range:</span> {{range}}</div>{{/range}}
+    {{#props}}<div class="sheet-template-row"><span>Properties:</span> {{props}}</div>{{/props}}
+  </div>
+</rolltemplate>
+
+<form class="sheet-main">
+  <!-- Tab Selectors -->
+  <input type="radio" name="attr_tab" class="sheet-tab" value="combat" checked>
+  <span class="tab-label" data-tab="combat">Combat</span>
+  
+  <input type="radio" name="attr_tab" class="sheet-tab" value="attributes">
+  <span class="tab-label" data-tab="attributes">Attributes</span>
+  
+  <input type="radio" name="attr_tab" class="sheet-tab" value="inventory">
+  <span class="tab-label" data-tab="inventory">Inventory</span>
+  
+  <input type="radio" name="attr_tab" class="sheet-tab" value="perks">
+  <span class="tab-label" data-tab="perks">Perks</span>
+
+  <!-- Tab Panels -->
+  <div class="sheet-tab-content sheet-tab-combat">
+    <h2>Combat</h2>
+
+    <div class="section">
+      <label>Health</label>
+      <input type="number" name="attr_health" value="30">
+    </div>
+
+    <div class="section">
+      <label>Armor</label>
+      <input type="number" name="attr_armor" value="0">
+    </div>
+
+    <!-- PRIMARY WEAPON -->
+<div class="weapon">
+  <h3>Primary Weapon</h3>
+  
+  <label>Name</label>
+  <input type="text" name="attr_primary_name">
+
+  <label>Dice Count</label>
+  <input type="number" name="attr_primary_dicecount" value="4">
+
+  <label>Die Type</label>
+  <select name="attr_primary_dietype">
+    <option value="4">d4</option>
+    <option value="6" selected>d6</option>
+    <option value="8">d8</option>
+    <option value="10">d10</option>
+    <option value="12">d12</option>
+  </select>
+
+  <label>Dice Formula</label>
+  <input type="text" name="attr_primary_dice" value="@{primary_dicecount}d@{primary_dietype}" disabled>
+
+  <label>AP Cost</label>
+  <input type="number" name="attr_primary_ap" value="3">
+
+  <label>Ammo (Current / Max)</label>
+  <input type="text" name="attr_primary_ammo" placeholder="12/16">
+
+  <label>Range / Max Range</label>
+  <input type="text" name="attr_primary_range" placeholder="e.g. 30ft / 90ft">
+
+  <label>Properties</label>
+  <textarea name="attr_primary_properties" placeholder="e.g. Explosive, Silenced"></textarea>
+
+ <button type="roll" name="roll_primary"
+  value="&{template:weapon} 
+  {{title=@{primary_name}}}
+  {{attack=[[@{primary_dicecount}d@{primary_dietype}!!]]}}
+  {{ap=@{primary_ap}}}
+  {{ammo=@{primary_ammo}}}
+  {{range=@{primary_range}}}
+  {{props=@{primary_properties}}}">
+  Attack (Primary)
+</button>
+
+
+
+<!-- SECONDARY WEAPON -->
+<div class="weapon">
+  <h3>Secondary Weapon</h3>
+
+  <label>Name</label>
+  <input type="text" name="attr_secondary_name">
+
+  <label>Dice Count</label>
+  <input type="number" name="attr_secondary_dicecount" value="2">
+
+  <label>Die Type</label>
+  <select name="attr_secondary_dietype">
+    <option value="4">d4</option>
+    <option value="6">d6</option>
+    <option value="8" selected>d8</option>
+    <option value="10">d10</option>
+    <option value="12">d12</option>
+  </select>
+
+  <label>Dice Formula</label>
+  <input type="text" name="attr_secondary_dice" value="@{secondary_dicecount}d@{secondary_dietype}" disabled>
+
+  <label>AP Cost</label>
+  <input type="number" name="attr_secondary_ap" value="2">
+
+  <label>Ammo (Current / Max)</label>
+  <input type="text" name="attr_secondary_ammo" placeholder="6/12">
+
+  <label>Range / Max Range</label>
+  <input type="text" name="attr_secondary_range" placeholder="e.g. 20ft / 60ft">
+
+  <label>Properties</label>
+  <textarea name="attr_secondary_properties" placeholder="e.g. Piercing, Smoke rounds"></textarea>
+
+  <button type="roll" name="roll_secondary"
+    value="&{template:default} 
+    {{name=@{secondary_name}}}
+    {{Roll=[[@{secondary_dicecount}d@{secondary_dietype}]]}}
+    {{Misses=[[0 + @{secondary_dicecount}r1]]}}
+    {{Crits=[[0 + @{secondary_dicecount}r@{secondary_dietype}]]}}">
+    Attack (Secondary)
+  </button>
+</div>
+
+
+  <div class="sheet-tab-content sheet-tab-attributes">Coming soon...</div>
+  <div class="sheet-tab-content sheet-tab-inventory">Coming soon...</div>
+  <div class="sheet-tab-content sheet-tab-perks">Coming soon...</div>
+</form>
