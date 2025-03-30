@@ -190,6 +190,7 @@ button[name="act_repair_armor"] {
   min-width: 140px;
   display: flex;
   flex-direction: column;
+  background: var(--dark);
 }
 .weapon textarea {
   width: 100%;
