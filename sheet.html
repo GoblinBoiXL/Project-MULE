@@ -113,15 +113,6 @@
 
   <button type="roll" value="&{template:weapon} {{title=@{secondary_name}}} {{attack=[[@{secondary_dicecount}d@{secondary_dietype}!]]}} {{ap=@{secondary_ap}}} {{ammo=@{secondary_ammo}}} {{range=@{secondary_range}}}">Fire!
 </button>
-  
-  <button type="roll" name="roll_secondary"
-    value="&{template:default} 
-    {{name=@{secondary_name}}}
-    {{Roll=[[@{secondary_dicecount}d@{secondary_dietype}]]}}
-    {{Misses=[[0 + @{secondary_dicecount}r1]]}}
-    {{Crits=[[0 + @{secondary_dicecount}r@{secondary_dietype}]]}}">
-    Attack (Secondary)
-  </button>
 </div>
 </div>
     
