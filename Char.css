@@ -203,6 +203,30 @@ button[name="act_repair_armor"] {
   margin-top: 10px;
 }
 
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  background-color: var(--dark);
+  color: var(--light-text);
+  border: 1px solid var(--orange);
+  padding: 5px;
+  font-family: inherit;
+  font-size: 0.95em;
+  border-radius: 3px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
 
 /* Input and Button Style */
 input, button {
