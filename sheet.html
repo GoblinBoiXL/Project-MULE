@@ -27,26 +27,35 @@
      
       <!-- Tab Panels --> 
   <div class="sheet-tab-content sheet-tab-combat">
-    <h2>Combat</h2>
+  <h2>Combat</h2>
 
-<div class="health-display">
-  <div class="section">
-    <label>Health</label>
-    <input type="number" name="attr_health" value="30">
+  <!-- Health, Max Health & Summary Row -->
+  <div class="row">
+    <div class="field">
+      <label>Health</label>
+      <input type="number" name="attr_health" value="30">
+    </div>
 
-    <label>Max Health</label>
-    <input type="number" name="attr_health_max" value="30">
+    <div class="field">
+      <label>Max Health</label>
+      <input type="number" name="attr_health_max" value="30">
+    </div>
+
+    <div class="field">
+      <label>Summary</label>
+      <div class="health-summary">
+        <span name="attr_health"></span> / <span name="attr_health_max"></span>
+      </div>
+    </div>
   </div>
 
-  <div class="health-summary">
-    Health: <span name="attr_health"></span>/<span name="attr_health_max"></span>
-  </div>
-</div>
- 
-      <div class="section">
+  <!-- Armor Row -->
+  <div class="row">
+    <div class="field">
       <label>Armor</label>
       <input type="number" name="attr_armor" value="0">
     </div>
+  </div>
 
     <!-- PRIMARY WEAPON -->
 <div class="weapon">
