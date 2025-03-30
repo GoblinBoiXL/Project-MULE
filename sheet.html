@@ -77,39 +77,67 @@
     <!-- PRIMARY WEAPON -->
 <div class="weapon">
   <h3>Primary Weapon</h3>
-  
-  <label>Name</label>
-  <input type="text" name="attr_primary_name">
 
-  <label>Dice Count</label>
-  <input type="number" name="attr_primary_dicecount" value="4">
+  <div class="row">
+    <div class="field">
+      <label>Name</label>
+      <input type="text" name="attr_primary_name">
+    </div>
 
-  <label>Die Type</label>
-  <select name="attr_primary_dietype">
-    <option value="4">d4</option>
-    <option value="6" selected>d6</option>
-    <option value="8">d8</option>
-    <option value="10">d10</option>
-    <option value="12">d12</option>
-  </select>
+    <div class="field">
+      <label>AP Cost</label>
+      <input type="number" name="attr_primary_ap" value="3">
+    </div>
 
-  <label>Dice Formula</label>
-  <input type="text" name="attr_primary_dice" value="@{primary_dicecount}d@{primary_dietype}" disabled>
+    <div class="field">
+      <label>Ammo</label>
+      <input type="text" name="attr_primary_ammo" placeholder="12/16">
+    </div>
+  </div>
 
-  <label>AP Cost</label>
-  <input type="number" name="attr_primary_ap" value="3">
+  <div class="row">
+    <div class="field">
+      <label>Dice Count</label>
+      <input type="number" name="attr_primary_dicecount" value="4">
+    </div>
 
-  <label>Ammo (Current / Max)</label>
-  <input type="text" name="attr_primary_ammo" placeholder="12/16">
+    <div class="field">
+      <label>Die Type</label>
+      <select name="attr_primary_dietype">
+        <option value="4">d4</option>
+        <option value="6" selected>d6</option>
+        <option value="8">d8</option>
+        <option value="10">d10</option>
+        <option value="12">d12</option>
+      </select>
+    </div>
 
-  <label>Range / Max Range</label>
-  <input type="text" name="attr_primary_range" placeholder="e.g. 30ft / 90ft">
+    <div class="field">
+      <label>Dice Formula</label>
+      <input type="text" name="attr_primary_dice" value="@{primary_dicecount}d@{primary_dietype}" disabled>
+    </div>
+  </div>
 
-  <label>Properties</label>
-  <textarea name="attr_primary_properties" placeholder="e.g. Explosive, Silenced"></textarea>
-  
-<button type="roll" value="&{template:weapon} {{title=@{primary_name}}} {{attack=[[@{primary_dicecount}d@{primary_dietype}!]]}} {{ap=@{primary_ap}}} {{ammo=@{primary_ammo}}} {{range=@{primary_range}}}">Fire!
-</button>
+  <div class="row">
+    <div class="field">
+      <label>Range</label>
+      <input type="text" name="attr_primary_range" placeholder="30ft / 90ft">
+    </div>
+
+    <div class="field">
+      <label>Properties</label>
+      <textarea name="attr_primary_properties" placeholder="e.g. Explosive, Silenced"></textarea>
+    </div>
+
+    <div class="field">
+      <label>&nbsp;</label>
+      <button type="roll" value="&{template:weapon} {{title=@{primary_name}}} {{attack=[[@{primary_dicecount}d@{primary_dietype}!]]}} {{ap=@{primary_ap}}} {{ammo=@{primary_ammo}}} {{range=@{primary_range}}} {{props=@{primary_properties}}}">
+        Fire!
+      </button>
+    </div>
+  </div>
+</div>
+
   
 
 <!-- SECONDARY WEAPON -->
