@@ -49,13 +49,26 @@
     </div>
   </div>
 
-  <!-- Armor Row -->
+  <!-- Armor Block -->
+<div class="armor-block">
   <div class="row">
     <div class="field">
       <label>Armor</label>
       <input type="number" name="attr_armor" value="0">
     </div>
+
+    <div class="field">
+      <label>Armor Rating (0-5)</label>
+      <input type="number" name="attr_armor_rating" value="5" min="0" max="5">
+    </div>
+
+    <div class="field">
+      <label>Repair</label>
+      <button type="action" name="act_repair_armor">🔧 Repair</button>
+    </div>
   </div>
+</div>
+
 
     <!-- PRIMARY WEAPON -->
 <div class="weapon">
