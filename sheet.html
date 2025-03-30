@@ -72,19 +72,11 @@
 
   <label>Properties</label>
   <textarea name="attr_primary_properties" placeholder="e.g. Explosive, Silenced"></textarea>
-
-<button type="roll"
-  value="&{template:weapon} 
-  {{title=@{primary_name}}} 
-  {{attack=[[ @{primary_dicecount}d@{primary_dietype}!! ]]}}
-
-  {{ap=@{primary_ap}}} 
-  {{ammo=@{primary_ammo}}} 
-  {{range=@{primary_range}}} 
-  {{props=@{primary_properties}}}">
+  
+<button type="roll" value="&{template:weapon} {{title=@{primary_name}}} {{attack=[[@{primary_dicecount}d@{primary_dietype}!]]}} {{ap=@{primary_ap}}} {{ammo=@{primary_ammo}}} {{range=@{primary_range}}}">
   Fire!
 </button>
-
+  
 
 <!-- SECONDARY WEAPON -->
 <div class="weapon">
