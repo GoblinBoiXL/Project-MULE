@@ -1,44 +1,106 @@
-<!-- Tab Navigation -->
-<div class="tabs">
-  <input type="radio" name="tab" class="tab-button" value="combat" checked>
-  <span>Combat</span>
-  <input type="radio" name="tab" class="tab-button" value="attributes">
-  <span>Attributes</span>
-  <input type="radio" name="tab" class="tab-button" value="inventory">
-  <span>Inventory</span>
-  <input type="radio" name="tab" class="tab-button" value="perks">
-  <span>Perks</span>
-</div>
+:root {
+  --dark: #1e1e1e;
+  --orange: #ff6a00;
+  --light-text: #f0f0f0;
+}
 
-<!-- Sheet Content -->
-<div class="sheet-content combat-tab">
-  <h2>Combat</h2>
-  
-  <div class="section">
-    <label>Health</label>
-    <input type="number" name="attr_health" value="30">
-  </div>
+.charsheet {
+  background: var(--dark);
+  color: var(--light-text);
+  font-family: sans-serif;
+  padding: 10px;
+}
 
-  <div class="section">
-    <label>Armor</label>
-    <input type="number" name="attr_armor" value="0">
-  </div>
+.sheet-rolltemplate-weapon {
+  background: #1e1e1e;
+  border: 2px solid #ff6a00;
+  color: #f0f0f0;
+  font-family: sans-serif;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+}
 
-  <fieldset class="repeating_weapons">
-    <div class="weapon">
-      <label>Weapon Name</label>
-      <input type="text" name="attr_weapon_name">
+.sheet-rolltemplate-weapon .sheet-template-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 
-      <label>Damage Dice</label>
-      <input type="text" name="attr_weapon_dice" placeholder="e.g. 4d6">
+.sheet-rolltemplate-weapon .sheet-template-header {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ff6a00;
+  border-bottom: 1px solid #ff6a00;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
 
-      <button type="roll" name="roll_attack" value="&{template:default} {{name=@{weapon_name}}} {{attack=[[@{weapon_dice}]]}}">
-        Attack Roll
-      </button>
-    </div>
-  </fieldset>
-</div>
+.sheet-rolltemplate-weapon .sheet-template-row {
+  display: flex;
+  justify-content: space-between;
+}
 
-<div class="sheet-content attributes-tab">Coming soon...</div>
-<div class="sheet-content inventory-tab">Coming soon...</div>
-<div class="sheet-content perks-tab">Coming soon...</div>
+.sheet-rolltemplate-weapon .sheet-template-row span {
+  font-weight: bold;
+  color: #ccc;
+}
+
+/* Show tab content based on selected radio */
+input.sheet-tab[value="combat"]:checked ~ .sheet-tab-combat,
+input.sheet-tab[value="attributes"]:checked ~ .sheet-tab-attributes,
+input.sheet-tab[value="inventory"]:checked ~ .sheet-tab-inventory,
+input.sheet-tab[value="perks"]:checked ~ .sheet-tab-perks {
+  display: block;
+}
+
+/* Tabs Styling */
+.tab-label {
+  display: inline-block;
+  background: var(--orange);
+  color: black;
+  padding: 6px 10px;
+  margin: 2px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 15px;
+}
+.weapon {
+  border: 2px solid var(--orange);
+  padding: 10px;
+  margin: 15px 0;
+  background: #2a2a2a;
+}
+
+.weapon h3 {
+  color: var(--orange);
+  margin-bottom: 5px;
+}
+
+.weapon label {
+  display: block;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.weapon textarea {
+  width: 100%;
+  min-height: 40px;
+  background: #1e1e1e;
+  color: var(--light-text);
+  border: 1px solid var(--orange);
+  padding: 5px;
+}
+
+/* Input and Button Style */
+input, button {
+  background: #2a2a2a;
+  color: var(--light-text);
+  border: 1px solid var(--orange);
+  padding: 5px;
+}
