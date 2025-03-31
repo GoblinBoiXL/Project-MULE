@@ -1,126 +1,43 @@
 :root {
-  --bg-dark: #1a120f;
-  --accent-yellow: #ffc733;
-  --accent-orange: #ff9900;
-  --text-light: #f0f0f0;
-  --font-ui: 'Courier New', Courier, monospace;
+  --dark: #081b13;
+  --accent: #00ff88;
+  --light-text: #b6ffcc;
 }
 
 .charsheet {
-  background: var(--bg-dark);
-  color: var(--accent-yellow);
-  font-family: var(--font-ui);
-  padding: 12px;
-  font-size: 13px;
+  background: var(--dark);
+  color: var(--light-text);
+  font-family: 'Lucida Console', Courier, monospace;
+  padding: 10px;
 }
 
-/* Tab Labels */
-.tab-label {
-  display: inline-block;
-  background: var(--accent-orange);
-  color: #000;
-  padding: 6px 10px;
-  margin: 2px 0;
-  cursor: pointer;
-  font-weight: bold;
-  font-family: var(--font-ui);
-  border-radius: 2px;
-}
-
-.sheet-tab:checked + label.tab-label {
-  background: var(--bg-dark);
-  color: var(--accent-yellow);
-  border-bottom: 2px solid var(--accent-yellow);
-}
-
-/* Hide all tab content by default */
-.sheet-tab-content {
-  display: none;
-}
-
-/* Show correct tab based on selected input */
-input.sheet-tab-toggle[value="combat"]:checked ~ .sheet-tab-combat,
-input.sheet-tab-toggle[value="attributes"]:checked ~ .sheet-tab-attributes,
-input.sheet-tab-toggle[value="inventory"]:checked ~ .sheet-tab-inventory,
-input.sheet-tab-toggle[value="perks"]:checked ~ .sheet-tab-perks {
-  display: block;
-}
-
-/* Section Layouts */
-.section, .weapon {
-  border: 2px solid var(--accent-orange);
-  padding: 12px;
-  margin: 12px 0;
-  background: #2b1b13;
-  border-radius: 4px;
-}
-
-.weapon h3 {
-  color: var(--accent-orange);
-  margin-bottom: 10px;
-}
-
-.weapon label, .section label {
-  color: var(--accent-yellow);
-  font-weight: bold;
-  margin-top: 8px;
-  display: block;
-  font-size: 12px;
-}
-
-/* Inputs & Buttons */
-input, select, textarea, button {
-  font-family: var(--font-ui);
-  background: #1c140f;
-  color: var(--accent-yellow);
-  border: 1px solid var(--accent-orange);
-  padding: 5px;
-  margin: 4px 0;
-  border-radius: 2px;
-  font-size: 12px;
-}
-
-input[type=number] {
-  width: 60px;
-}
-
-textarea {
-  width: 100%;
-  min-height: 60px;
-}
-
-/* Buttons */
-button {
-  background-color: var(--accent-orange);
-  color: #000;
-  font-weight: bold;
-  margin-top: 10px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-button:hover {
-  background-color: #ffb347;
-}
-
-/* Roll Templates */
+/* Roll Template Styling */
 .sheet-rolltemplate-weapon {
-  background: #1e1e1e;
-  border: 2px solid var(--accent-yellow);
-  color: var(--accent-yellow);
-  font-family: var(--font-ui);
+  background: var(--dark);
+  border: 2px solid var(--accent);
+  color: var(--light-text);
+  font-family: inherit;
   padding: 10px;
   border-radius: 5px;
+  width: 100%;
+  box-shadow: 0 0 8px var(--accent);
+}
+
+.sheet-rolltemplate-weapon .sheet-template-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .sheet-rolltemplate-weapon .sheet-template-header {
-  font-size: 1.1em;
+  font-size: 1.2em;
   font-weight: bold;
-  color: var(--accent-orange);
-  text-align: center;
-  border-bottom: 1px solid var(--accent-yellow);
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
   padding-bottom: 5px;
   margin-bottom: 5px;
+  text-align: center;
+  text-shadow: 0 0 4px var(--accent);
 }
 
 .sheet-rolltemplate-weapon .sheet-template-row {
@@ -130,4 +47,114 @@ button:hover {
 
 .sheet-rolltemplate-weapon .sheet-template-row span {
   font-weight: bold;
+  color: #aaffcc;
+}
+
+/* Tabs */
+.sheet-tab {
+  display: none;
+}
+
+.sheet-tab:checked + label.tab-label {
+  background: #112d21;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+.sheet-tab-content {
+  display: none;
+}
+
+.sheet-wrapper input.sheet-tab[value="combat"]:checked ~ .sheet-tab-combat,
+.sheet-wrapper input.sheet-tab[value="attributes"]:checked ~ .sheet-tab-attributes,
+.sheet-wrapper input.sheet-tab[value="inventory"]:checked ~ .sheet-tab-inventory,
+.sheet-wrapper input.sheet-tab[value="perks"]:checked ~ .sheet-tab-perks {
+  display: block;
+}
+
+.tab-label {
+  display: inline-block;
+  background: var(--accent);
+  color: black;
+  padding: 6px 10px;
+  margin: 2px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+/* Sections */
+.section, .armor-block, .weapon-block {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid var(--accent);
+  background-color: #112d21;
+  border-radius: 4px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.field {
+  flex: 1;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 4px;
+  font-size: 0.95em;
+  text-shadow: 0 0 2px var(--accent);
+}
+
+.health-summary {
+  padding: 6px 10px;
+  background: #112d21;
+  border: 1px solid var(--accent);
+  color: var(--light-text);
+  text-align: center;
+  border-radius: 4px;
+}
+
+.weapon textarea,
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  background-color: var(--dark);
+  color: var(--light-text);
+  border: 1px solid var(--accent);
+  padding: 5px;
+  font-family: inherit;
+  font-size: 0.95em;
+  border-radius: 3px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+select {
+  appearance: none;
+}
+
+button {
+  background: var(--accent);
+  color: black;
+  font-weight: bold;
+  border: 1px solid #0d261b;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 6px 10px;
+  margin-top: 6px;
+  font-family: inherit;
+  box-shadow: 0 0 6px var(--accent);
 }
