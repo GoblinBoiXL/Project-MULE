@@ -1,15 +1,17 @@
 :root {
-  --dark: #081b13;
-  --accent: #00ff88;
-  --light-text: #b6ffcc;
+  --dark: #1e1300;
+  --accent: #ffcc00;
+  --light-text: #fff2cc;
+  --font-ui: 'Courier New', Courier, monospace;
 }
 
 .charsheet {
   background: var(--dark);
   color: var(--light-text);
-  font-family: 'Lucida Console', Courier, monospace;
+  font-family: var(--font-ui);
   padding: 10px;
 }
+
 
 /* Roll Template Styling */
 .sheet-rolltemplate-weapon {
