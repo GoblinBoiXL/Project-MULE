@@ -1,9 +1,10 @@
 :root {
-  --dark: #1e1300;
-  --accent: #ffcc00;
-  --light-text: #fff2cc;
+  --dark: #0f0b00;
+  --accent: #ffb300; 
+  --light-text: #ffe6b3;
   --font-ui: 'Courier New', Courier, monospace;
 }
+
 
 .charsheet {
   background: var(--dark);
