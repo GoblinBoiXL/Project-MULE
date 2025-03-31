@@ -13,14 +13,13 @@
 }
 
 
-/* Roll Template Styling */
 .sheet-rolltemplate-weapon {
-  background: #1a1400;
+  background: #0f0b00;
   border: 2px solid var(--accent);
   color: var(--light-text);
-  font-family: inherit;
-  padding: 10px;
-  border-radius: 5px;
+  font-family: var(--font-ui);
+  padding: 12px;
+  border-radius: 6px;
   width: 100%;
   box-shadow: 0 0 8px var(--accent);
 }
@@ -28,28 +27,31 @@
 .sheet-rolltemplate-weapon .sheet-template-container {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
 }
 
 .sheet-rolltemplate-weapon .sheet-template-header {
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: bold;
   color: var(--accent);
-  border-bottom: 1px solid var(--accent);
-  padding-bottom: 5px;
-  margin-bottom: 5px;
   text-align: center;
   text-shadow: 0 0 4px var(--accent);
+  margin-bottom: 6px;
+  border-bottom: 1px dashed var(--accent);
+  padding-bottom: 4px;
 }
 
 .sheet-rolltemplate-weapon .sheet-template-row {
   display: flex;
   justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px solid #2a1e00;
 }
 
 .sheet-rolltemplate-weapon .sheet-template-row span {
   font-weight: bold;
-  color: #aaffcc;
+  color: var(--accent);
+  text-shadow: 0 0 2px #000;
 }
 
 /* Tabs */
