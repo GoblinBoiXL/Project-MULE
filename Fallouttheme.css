@@ -33,15 +33,16 @@
   border-bottom: 2px solid var(--accent-yellow);
 }
 
-/* Tab Content Area */
+/* Hide all tab content by default */
 .sheet-tab-content {
   display: none;
 }
 
-.sheet-wrapper input.sheet-tab[value="combat"]:checked ~ form .sheet-tab-combat,
-.sheet-wrapper input.sheet-tab[value="attributes"]:checked ~ form .sheet-tab-attributes,
-.sheet-wrapper input.sheet-tab[value="inventory"]:checked ~ form .sheet-tab-inventory,
-.sheet-wrapper input.sheet-tab[value="perks"]:checked ~ form .sheet-tab-perks {
+/* Show correct tab based on selected input */
+input.sheet-tab-toggle[value="combat"]:checked ~ .sheet-tab-combat,
+input.sheet-tab-toggle[value="attributes"]:checked ~ .sheet-tab-attributes,
+input.sheet-tab-toggle[value="inventory"]:checked ~ .sheet-tab-inventory,
+input.sheet-tab-toggle[value="perks"]:checked ~ .sheet-tab-perks {
   display: block;
 }
 
