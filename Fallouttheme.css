@@ -1,0 +1,132 @@
+:root {
+  --bg-dark: #1a120f;
+  --accent-yellow: #ffc733;
+  --accent-orange: #ff9900;
+  --text-light: #f0f0f0;
+  --font-ui: 'Courier New', Courier, monospace;
+}
+
+.charsheet {
+  background: var(--bg-dark);
+  color: var(--accent-yellow);
+  font-family: var(--font-ui);
+  padding: 12px;
+  font-size: 13px;
+}
+
+/* Tab Labels */
+.tab-label {
+  display: inline-block;
+  background: var(--accent-orange);
+  color: #000;
+  padding: 6px 10px;
+  margin: 2px 0;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: var(--font-ui);
+  border-radius: 2px;
+}
+
+.sheet-tab:checked + label.tab-label {
+  background: var(--bg-dark);
+  color: var(--accent-yellow);
+  border-bottom: 2px solid var(--accent-yellow);
+}
+
+/* Tab Content Area */
+.sheet-tab-content {
+  display: none;
+}
+
+.sheet-wrapper input.sheet-tab[value="combat"]:checked ~ form .sheet-tab-combat,
+.sheet-wrapper input.sheet-tab[value="attributes"]:checked ~ form .sheet-tab-attributes,
+.sheet-wrapper input.sheet-tab[value="inventory"]:checked ~ form .sheet-tab-inventory,
+.sheet-wrapper input.sheet-tab[value="perks"]:checked ~ form .sheet-tab-perks {
+  display: block;
+}
+
+/* Section Layouts */
+.section, .weapon {
+  border: 2px solid var(--accent-orange);
+  padding: 12px;
+  margin: 12px 0;
+  background: #2b1b13;
+  border-radius: 4px;
+}
+
+.weapon h3 {
+  color: var(--accent-orange);
+  margin-bottom: 10px;
+}
+
+.weapon label, .section label {
+  color: var(--accent-yellow);
+  font-weight: bold;
+  margin-top: 8px;
+  display: block;
+  font-size: 12px;
+}
+
+/* Inputs & Buttons */
+input, select, textarea, button {
+  font-family: var(--font-ui);
+  background: #1c140f;
+  color: var(--accent-yellow);
+  border: 1px solid var(--accent-orange);
+  padding: 5px;
+  margin: 4px 0;
+  border-radius: 2px;
+  font-size: 12px;
+}
+
+input[type=number] {
+  width: 60px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 60px;
+}
+
+/* Buttons */
+button {
+  background-color: var(--accent-orange);
+  color: #000;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #ffb347;
+}
+
+/* Roll Templates */
+.sheet-rolltemplate-weapon {
+  background: #1e1e1e;
+  border: 2px solid var(--accent-yellow);
+  color: var(--accent-yellow);
+  font-family: var(--font-ui);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.sheet-rolltemplate-weapon .sheet-template-header {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: var(--accent-orange);
+  text-align: center;
+  border-bottom: 1px solid var(--accent-yellow);
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+.sheet-rolltemplate-weapon .sheet-template-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sheet-rolltemplate-weapon .sheet-template-row span {
+  font-weight: bold;
+}
