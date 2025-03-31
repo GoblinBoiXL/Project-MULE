@@ -15,7 +15,7 @@
 
 /* Roll Template Styling */
 .sheet-rolltemplate-weapon {
-  background: var(--dark);
+  background: #1a1400;
   border: 2px solid var(--accent);
   color: var(--light-text);
   font-family: inherit;
@@ -90,7 +90,7 @@
   margin: 10px 0;
   padding: 10px;
   border: 1px solid var(--accent);
-  background-color: #112d21;
+  background-color: #1a1400;
   border-radius: 4px;
 }
 
@@ -130,7 +130,7 @@ input[type="text"],
 input[type="number"],
 select,
 textarea {
-  background-color: var(--dark);
+  background-color: #1a1400;
   color: var(--light-text);
   border: 1px solid var(--accent);
   padding: 5px;
