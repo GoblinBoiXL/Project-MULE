@@ -13,45 +13,47 @@
 }
 
 .sheet-rolltemplate-weapon {
-  background: #120d02; /* dark amber-friendly */
-  border: 2px solid var(--accent); /* amber border */
-  color: var(--light-text); /* default amber text */
+  background: #0f0b00;
+  border: 2px solid var(--accent);
+  color: var(--light-text);
   font-family: var(--font-ui);
-  padding: 10px;
-  border-radius: 5px;
+  padding: 12px;
+  border-radius: 6px;
   width: 100%;
+  box-shadow: 0 0 8px var(--accent);
 }
 
 .sheet-rolltemplate-weapon .sheet-template-container {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
 }
 
 .sheet-rolltemplate-weapon .sheet-template-header {
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: bold;
-  color: var(--accent); /* amber */
-  border-bottom: 1px solid var(--accent);
-  padding-bottom: 5px;
-  margin-bottom: 5px;
+  color: var(--accent);
   text-align: center;
-  text-shadow: 0 0 3px var(--accent);
+  text-shadow: 0 0 4px var(--accent);
+  margin-bottom: 6px;
+  border-bottom: 1px dashed var(--accent);
+  padding-bottom: 4px;
 }
 
 .sheet-rolltemplate-weapon .sheet-template-row {
   display: flex;
   justify-content: space-between;
-  color: var(--light-text); /* force readable text */
-  font-size: 0.95em;
+  padding: 4px 0;
+  border-bottom: 1px solid #2a1e00;
 }
 
 .sheet-rolltemplate-weapon .sheet-template-row span {
   font-weight: bold;
-  color: var(--light-text);
+  color: var(--accent);
+  text-shadow: 0 0 2px #000;
 }
 
-/* Inline Roll Result Cleanup */
+/* 💡 Force roll results to match theme */
 .sheet-rolltemplate-weapon .inlinerollresult,
 .sheet-rolltemplate-weapon .inlinerollresult.fullcrit,
 .sheet-rolltemplate-weapon .inlinerollresult.fullfail,
@@ -60,8 +62,10 @@
   border: none !important;
   color: var(--accent) !important;
   font-weight: bold;
-  text-shadow: 0 0 4px #ffb300, 0 0 2px #ffcc66; /* glowing amber */
+  text-shadow: 0 0 3px var(--accent);
+  padding: 0;
 }
+
 
 /* Tabs */
 .sheet-tab {
