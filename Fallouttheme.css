@@ -53,7 +53,7 @@
   display: flex;
   justify-content: space-between;
   padding: 2px 0;
-  color: var(--light-text); /* Fix dark text */
+  color: #ffe6b3; /* Fix dark text */
 }
 
 .sheet-rolltemplate-weapon .sheet-template-row span {
