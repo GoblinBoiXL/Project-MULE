@@ -20,22 +20,17 @@
 
 <div class="sheet-wrapper">
   
-  <!-- Tab Selectors -->
-  <input type="radio" name="attr_tab" class="sheet-tab" value="combat" id="tab-combat" checked>
-  <label class="tab-label" for="tab-combat">Combat</label>
+  <input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="combat" />
 
-  <input type="radio" name="attr_tab" class="sheet-tab" value="attributes" id="tab-attributes">
-  <label class="tab-label" for="tab-attributes">Attributes</label>
-
-  <input type="radio" name="attr_tab" class="sheet-tab" value="inventory" id="tab-inventory">
-  <label class="tab-label" for="tab-inventory">Inventory</label>
-
-  <input type="radio" name="attr_tab" class="sheet-tab" value="perks" id="tab-perks">
-  <label class="tab-label" for="tab-perks">Perks</label>
+<div class="sheet-tab-buttons">
+    <button type="action" name="act_combat" class="sheet-button0">Combat</button>
+    <button type="action" name="act_attributes" class="sheet-button1">Attributes</button>
+    <button type="action" name="act_inventory" class="sheet-button2">Inventory</button>
+    <button type="action" name="act_perks" class="sheet-button3">Perks</button>
+</div>
     
-     
       <!-- Tab Panels --> 
-  <div class="sheet-tab-content sheet-tab-combat">
+  <div class="sheet-combat">
   <h2>Combat</h2>
 
   <!-- Health, Max Health & Summary Row -->
@@ -204,7 +199,7 @@
 </div>
 
     
-  <div class="sheet-tab-content sheet-tab-attributes">
+  <div class="sheet-attributes">
   <h2>Attributes</h2>
 
   <div class="attributes-grid">
@@ -239,5 +234,20 @@
   </div>
 </div>
 
-  <div class="sheet-tab-content sheet-tab-inventory">Coming soon...</div>
-  <div class="sheet-tab-content sheet-tab-perks">Coming soon...</div>
+  <div class="sheet-inventory">
+    <h2>Inventory</h2>
+    <span>Inventory tab content goes here...</span>
+</div>
+<div class="sheet-perks">
+    <h2>Perks</h2>
+    <span>Perks tab content goes here...</span>
+</div>
+
+<script type="text/worker">
+    const buttonlist = ["combat", "attributes", "inventory", "perks"];
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, () => {
+            setAttrs({ sheetTab: button });
+        });
+    });
+</script>
