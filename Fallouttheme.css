@@ -102,15 +102,6 @@
     display: block;
 }
 
-/* Highlight the active button */
-.sheet-tabstoggle[value="combat"] ~ .sheet-tab-buttons .sheet-button0,
-.sheet-tabstoggle[value="attributes"] ~ .sheet-tab-buttons .sheet-button1,
-.sheet-tabstoggle[value="inventory"] ~ .sheet-tab-buttons .sheet-button2,
-.sheet-tabstoggle[value="perks"] ~ .sheet-tab-buttons .sheet-button3 {
-    outline: 2px solid var(--accent, #ffaa33);
-}
-
-
 /* Sections */
 .section, .armor-block, .weapon-block {
   margin: 10px 0;
