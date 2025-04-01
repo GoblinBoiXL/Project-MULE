@@ -73,34 +73,27 @@
   text-shadow: 0 0 6px var(--accent);
 }
 
-/* Hide all tab contents by default */
 .charsheet .sheet-combat,
 .charsheet .sheet-attributes,
 .charsheet .sheet-inventory,
 .charsheet .sheet-perks {
-    display: none;
+  display: none;
 }
 
-/* Style tab buttons */
-.sheet-tab-buttons button {
-    font-family: var(--font-ui, 'Courier New', Courier, monospace);
-    background-color: var(--accent, #ffaa33);
-    color: black;
-    border: 1px solid #444;
-    padding: 6px 12px;
-    margin-right: 5px;
-    font-weight: bold;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-/* Show the selected tab */
 .charsheet .sheet-tabstoggle[value="combat"] ~ .sheet-combat,
 .charsheet .sheet-tabstoggle[value="attributes"] ~ .sheet-attributes,
 .charsheet .sheet-tabstoggle[value="inventory"] ~ .sheet-inventory,
 .charsheet .sheet-tabstoggle[value="perks"] ~ .sheet-perks {
-    display: block;
+  display: block;
 }
+
+.charsheet .sheet-tabstoggle[value="combat"] ~ .tab-buttons .sheet-button0,
+.charsheet .sheet-tabstoggle[value="attributes"] ~ .tab-buttons .sheet-button1,
+.charsheet .sheet-tabstoggle[value="inventory"] ~ .tab-buttons .sheet-button2,
+.charsheet .sheet-tabstoggle[value="perks"] ~ .tab-buttons .sheet-button3 {
+  outline: 2px solid var(--accent);
+}
+
 
 /* Sections */
 .section, .armor-block, .weapon-block {
