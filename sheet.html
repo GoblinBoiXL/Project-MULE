@@ -188,6 +188,16 @@
   </button>
 </div>
 
+    <div class="section">
+  <label>Initiative</label>
+  <button type="roll" name="roll_initiative"
+    value="&{template:default} 
+    {{name=@{character_name}}} 
+    {{Initiative=[[1d20 + @{perception} &{tracker}]]}}">
+    🎲 Roll Initiative
+  </button>
+</div>
+
     
   <div class="sheet-tab-content sheet-tab-attributes">Coming soon...</div>
   <div class="sheet-tab-content sheet-tab-inventory">Coming soon...</div>
