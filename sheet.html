@@ -25,13 +25,10 @@
     <button type="action" name="act_combat" class="sheet-button0">Combat</button>
     <button type="action" name="act_attributes" class="sheet-button1">Attributes</button>
     <button type="action" name="act_inventory" class="sheet-button2">Inventory</button>
-    <button type="action" name="act_perks" class="sheet-button3">Perks</button>
-</div>
-    
+    <button type="action" name="act_perks" class="sheet-button3">Perks</button
       <!-- Tab Panels --> 
   <div class="sheet-combat">
   <h2>Combat</h2>
-
   <!-- Health, Max Health & Summary Row -->
   <div class="health-display">
   <div class="row">
@@ -39,23 +36,19 @@
       <label>Health</label>
       <input type="number" name="attr_health" value="30">
     </div>
-
     <div class="field">
       <label>Max Health</label>
       <input type="number" name="attr_health_max" value="30">
     </div>
-
     <div class="field">
       <label>Heal</label>
       <button type="action" name="act_heal">✚ Heal</button>
     </div>
   </div>
-
   <div class="health-summary">
     Health: <span name="attr_health"></span>/<span name="attr_health_max"></span>
   </div>
 </div>
-
   <!-- Armor Block -->
 <div class="armor-block">
   <div class="row">
@@ -63,24 +56,19 @@
       <label>Armor</label>
       <input type="number" name="attr_armor" value="0">
     </div>
-
     <div class="field">
       <label>Armor Rating (0-5)</label>
       <input type="number" name="attr_armor_rating" value="5" min="0" max="5">
     </div>
-
     <div class="field">
       <label>Repair</label>
       <button type="action" name="act_repair_armor">🔧 Repair</button>
     </div>
   </div>
 </div>
-
-
     <!-- PRIMARY WEAPON -->
 <div class="weapon-block">
   <h3>Primary Weapon</h3>
-
   <div class="weapon-row">
     <div class="weapon-field">
       <label>Name</label>
@@ -99,7 +87,6 @@
       <input type="text" name="attr_primary_range" placeholder="30ft / 90ft">
     </div>
   </div>
-
   <div class="weapon-row">
     <div class="weapon-field">
       <label>Dice Count</label>
@@ -120,25 +107,19 @@
       <input type="text" name="attr_primary_dice" value="@{primary_dicecount}d@{primary_dietype}" disabled>
     </div>
   </div>
-
   <div class="weapon-row">
     <div class="weapon-field" style="flex: 2;">
       <label>Properties</label>
       <textarea name="attr_primary_properties" placeholder="e.g. Explosive, Silenced"></textarea>
     </div>
   </div>
-
   <button type="roll" value="&{template:weapon} {{title=@{primary_name}}} {{attack=[[@{primary_dicecount}d@{primary_dietype}!]]}} {{ap=@{primary_ap}}} {{ammo=@{primary_ammo}}} {{range=@{primary_range}}} {{props=@{primary_properties}}}">
     🔫 Fire!
   </button>
 </div>
-
-  
-
 <!-- SECONDARY WEAPON -->
 <div class="weapon-block">
   <h3>Secondary Weapon</h3>
-
   <div class="weapon-row">
     <div class="weapon-field">
       <label>Name</label>
@@ -157,7 +138,6 @@
       <input type="text" name="attr_secondary_range" placeholder="20ft / 60ft">
     </div>
   </div>
-
   <div class="weapon-row">
     <div class="weapon-field">
       <label>Dice Count</label>
@@ -178,29 +158,23 @@
       <input type="text" name="attr_secondary_dice" value="@{secondary_dicecount}d@{secondary_dietype}" disabled>
     </div>
   </div>
-
   <div class="weapon-row">
     <div class="weapon-field" style="flex: 2;">
       <label>Properties</label>
       <textarea name="attr_secondary_properties" placeholder="e.g. Piercing, Smoke rounds"></textarea>
     </div>
   </div>
-
   <button type="roll" value="&{template:weapon} {{title=@{secondary_name}}} {{attack=[[@{secondary_dicecount}d@{secondary_dietype}!]]}} {{ap=@{secondary_ap}}} {{ammo=@{secondary_ammo}}} {{range=@{secondary_range}}} {{props=@{secondary_properties}}}">
     🔫 Fire!
   </button>
 </div>
-
     <div class="section">
   <label>Initiative</label>
   <button type="roll" name="roll_initiative" value="&{template:initiative} {{title=@{character_name}}}  {{result=[[1d20 + @{perception} &{tracker}]]}}">🎲 Roll Initiative
   </button>
-</div>
-
-    
+</div>  
   <div class="sheet-attributes">
   <h2>Attributes</h2>
-
   <div class="attributes-grid">
     <div class="attribute">
       <label>Strength</label>
@@ -232,7 +206,6 @@
     </div>
   </div>
 </div>
-
   <div class="sheet-inventory">
     <h2>Inventory</h2>
     <span>Inventory tab content goes here...</span>
@@ -241,7 +214,7 @@
     <h2>Perks</h2>
     <span>Perks tab content goes here...</span>
 </div>
-
+    
 <script type="text/worker">
     const buttonlist = ["combat", "attributes", "inventory", "perks"];
     buttonlist.forEach(button => {
