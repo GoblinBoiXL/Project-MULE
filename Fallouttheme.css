@@ -183,3 +183,15 @@ button {
   font-family: inherit;
   box-shadow: 0 0 6px var(--accent);
 }
+
+button[name="roll_initiative"] {
+  background-color: var(--accent);
+  color: black;
+  font-weight: bold;
+  padding: 6px 12px;
+  border: 1px solid #111;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 5px;
+}
