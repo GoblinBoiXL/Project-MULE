@@ -81,14 +81,6 @@
     display: none;
 }
 
-/* Show the selected tab */
-.charsheet .sheet-tabstoggle[value="combat"] ~ .sheet-combat,
-.charsheet .sheet-tabstoggle[value="attributes"] ~ .sheet-attributes,
-.charsheet .sheet-tabstoggle[value="inventory"] ~ .sheet-inventory,
-.charsheet .sheet-tabstoggle[value="perks"] ~ .sheet-perks {
-    display: block;
-}
-
 /* Style tab buttons */
 .sheet-tab-buttons button {
     font-family: var(--font-ui, 'Courier New', Courier, monospace);
@@ -100,6 +92,14 @@
     font-weight: bold;
     border-radius: 3px;
     cursor: pointer;
+}
+
+/* Show the selected tab */
+.charsheet .sheet-tabstoggle[value="combat"] ~ .sheet-combat,
+.charsheet .sheet-tabstoggle[value="attributes"] ~ .sheet-attributes,
+.charsheet .sheet-tabstoggle[value="inventory"] ~ .sheet-inventory,
+.charsheet .sheet-tabstoggle[value="perks"] ~ .sheet-perks {
+    display: block;
 }
 
 /* Highlight the active button */
