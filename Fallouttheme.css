@@ -108,6 +108,19 @@
   border-radius: 3px;
 }
 
+/* --- Tab Display Logic Fix --- */
+.sheet-tab-content {
+  display: none;
+}
+
+/* Show only the correct tab content based on the checked radio input */
+input#tab-combat:checked ~ .sheet-tab-combat,
+input#tab-attributes:checked ~ .sheet-tab-attributes,
+input#tab-inventory:checked ~ .sheet-tab-inventory,
+input#tab-perks:checked ~ .sheet-tab-perks {
+  display: block;
+}
+
 /* Sections */
 .section, .armor-block, .weapon-block {
   margin: 10px 0;
