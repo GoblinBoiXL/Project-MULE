@@ -73,53 +73,43 @@
   text-shadow: 0 0 6px var(--accent);
 }
 
-
-
-/* Tabs */
-.sheet-tab {
-  display: none;
+/* Hide all tab contents by default */
+.charsheet .sheet-combat,
+.charsheet .sheet-attributes,
+.charsheet .sheet-inventory,
+.charsheet .sheet-perks {
+    display: none;
 }
 
-.sheet-tab:checked + label.tab-label {
-  background: #112d21;
-  color: var(--accent);
-  border-bottom: 2px solid var(--accent);
+/* Show the selected tab */
+.charsheet .sheet-tabstoggle[value="combat"] ~ .sheet-combat,
+.charsheet .sheet-tabstoggle[value="attributes"] ~ .sheet-attributes,
+.charsheet .sheet-tabstoggle[value="inventory"] ~ .sheet-inventory,
+.charsheet .sheet-tabstoggle[value="perks"] ~ .sheet-perks {
+    display: block;
 }
 
-.sheet-tab-content {
-  display: none;
+/* Style tab buttons */
+.sheet-tab-buttons button {
+    font-family: var(--font-ui, 'Courier New', Courier, monospace);
+    background-color: var(--accent, #ffaa33);
+    color: black;
+    border: 1px solid #444;
+    padding: 6px 12px;
+    margin-right: 5px;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
-.sheet-wrapper input.sheet-tab[value="combat"]:checked ~ .sheet-tab-combat,
-.sheet-wrapper input.sheet-tab[value="attributes"]:checked ~ .sheet-tab-attributes,
-.sheet-wrapper input.sheet-tab[value="inventory"]:checked ~ .sheet-tab-inventory,
-.sheet-wrapper input.sheet-tab[value="perks"]:checked ~ .sheet-tab-perks {
-  display: block;
+/* Highlight the active button */
+.sheet-tabstoggle[value="combat"] ~ .sheet-tab-buttons .sheet-button0,
+.sheet-tabstoggle[value="attributes"] ~ .sheet-tab-buttons .sheet-button1,
+.sheet-tabstoggle[value="inventory"] ~ .sheet-tab-buttons .sheet-button2,
+.sheet-tabstoggle[value="perks"] ~ .sheet-tab-buttons .sheet-button3 {
+    outline: 2px solid var(--accent, #ffaa33);
 }
 
-.tab-label {
-  display: inline-block;
-  background: var(--accent);
-  color: black;
-  padding: 6px 10px;
-  margin: 2px;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 3px;
-}
-
-/* --- Tab Display Logic Fix --- */
-.sheet-tab-content {
-  display: none;
-}
-
-/* Show only the correct tab content based on the checked radio input */
-input#tab-combat:checked ~ .sheet-tab-combat,
-input#tab-attributes:checked ~ .sheet-tab-attributes,
-input#tab-inventory:checked ~ .sheet-tab-inventory,
-input#tab-perks:checked ~ .sheet-tab-perks {
-  display: block;
-}
 
 /* Sections */
 .section, .armor-block, .weapon-block {
