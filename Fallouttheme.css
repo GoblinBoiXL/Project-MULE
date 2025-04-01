@@ -195,3 +195,38 @@ button[name="roll_initiative"] {
   width: 100%;
   margin-top: 5px;
 }
+
+.sheet-rolltemplate-initiative {
+  background: #141005;
+  border: 2px solid #ffcc00;
+  color: #ffe680;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 10px;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.sheet-rolltemplate-initiative .sheet-template-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sheet-rolltemplate-initiative .sheet-template-header {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #ffcc00;
+  border-bottom: 1px solid #ffcc00;
+  padding-bottom: 4px;
+  text-align: center;
+}
+
+.sheet-rolltemplate-initiative .sheet-template-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sheet-rolltemplate-initiative .sheet-template-row span {
+  font-weight: bold;
+  color: #ccc17a;
+}
