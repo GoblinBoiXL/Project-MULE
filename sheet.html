@@ -216,10 +216,12 @@
 </div>
     
 <script type="text/worker">
-    const buttonlist = ["combat", "attributes", "inventory", "perks"];
-    buttonlist.forEach(button => {
-        on(`clicked:${button}`, () => {
-            setAttrs({ sheetTab: button });
-        });
+  const buttonlist = ["combat", "attributes", "inventory", "perks"];
+  buttonlist.forEach(button => {
+    on(`clicked:${button}`, function() {
+      setAttrs({
+        sheetTab: button
+      });
     });
+  });
 </script>
