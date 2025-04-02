@@ -73,6 +73,13 @@
   text-shadow: 0 0 6px var(--accent);
 }
 
+.charsheet[data-tab="combat"] .sheet-combat,
+.charsheet[data-tab="attributes"] .sheet-attributes,
+.charsheet[data-tab="inventory"] .sheet-inventory,
+.charsheet[data-tab="perks"] .sheet-perks {
+  display: block;
+}
+
 .charsheet .sheet-combat,
 .charsheet .sheet-attributes,
 .charsheet .sheet-inventory,
@@ -80,12 +87,6 @@
   display: none;
 }
 
-.charsheet .sheet-tabstoggle[value="combat"] ~ .sheet-combat,
-.charsheet .sheet-tabstoggle[value="attributes"] ~ .sheet-attributes,
-.charsheet .sheet-tabstoggle[value="inventory"] ~ .sheet-inventory,
-.charsheet .sheet-tabstoggle[value="perks"] ~ .sheet-perks {
-  display: block;
-}
 
 .charsheet .sheet-tabstoggle[value="combat"] ~ .tab-buttons .sheet-button0,
 .charsheet .sheet-tabstoggle[value="attributes"] ~ .tab-buttons .sheet-button1,
