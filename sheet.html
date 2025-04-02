@@ -221,10 +221,18 @@
   const buttonlist = ["act_combat", "act_attributes", "act_inventory", "act_perks"];
   buttonlist.forEach(button => {
     on(`clicked:${button}`, function() {
-      setAttrs({
-        sheetTab: button.replace("act_", "")
+      const tab = button.replace("act_", "");
+      setAttrs({ sheetTab: tab }, () => {
+        // Set data-tab manually since Roll20 doesn't automatically update DOM
+        document.querySelector(".charsheet")?.setAttribute("data-tab", tab);
       });
     });
   });
-</script>
 
+  // Ensure correct tab shows on load
+  on("sheet:opened", function() {
+    getAttrs(["sheetTab"], function(values) {
+      document.querySelector(".charsheet")?.setAttribute("data-tab", values.sheetTab || "combat");
+    });
+  });
+</script>
