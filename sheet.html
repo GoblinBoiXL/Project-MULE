@@ -218,13 +218,12 @@
     <span>Perks tab content goes here...</span>
 </div>
     
-<script type="text/worker">
-  const buttonlist = ["combat", "attributes", "inventory", "perks"];
-  buttonlist.forEach(button => {
-    on(`clicked:${button}`, function() {
-      setAttrs({
-        sheetTab: button
-      });
+const buttonlist = ["act_combat", "act_attributes", "act_inventory", "act_perks"];
+buttonlist.forEach(button => {
+  on(`clicked:${button}`, function() {
+    setAttrs({
+      sheetTab: button.replace("act_", "")
     });
   });
-</script>
+});
+
