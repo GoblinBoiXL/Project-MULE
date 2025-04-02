@@ -1,0 +1,83 @@
+<rolltemplate class="sheet-rolltemplate-weapon">
+  <div class="sheet-template-container">
+    <div class="sheet-template-header">{{title}}</div>
+    {{#attack}}<div class="sheet-template-row"><span>Attack Roll:</span> {{attack}}</div>{{/attack}}
+    {{#ap}}<div class="sheet-template-row"><span>AP Cost:</span> {{ap}}</div>{{/ap}}
+    {{#ammo}}<div class="sheet-template-row"><span>Ammo:</span> {{ammo}}</div>{{/ammo}}
+    {{#range}}<div class="sheet-template-row"><span>Range:</span> {{range}}</div>{{/range}}
+    {{#props}}<div class="sheet-template-row"><span>Properties:</span> {{props}}</div>{{/props}}
+  </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-initiative">
+  <div class="sheet-template-container">
+    <div class="sheet-template-header">{{title}}</div>
+    {{#result}}<div class="sheet-template-row">
+      <span>Initiative:</span> {{result}}
+    </div>{{/result}}
+  </div>
+</rolltemplate>
+
+<div class="charsheet" data-tab="combat">
+  <input type="hidden" name="attr_sheetTab" value="combat" />
+
+  <div class="sheet-tab-buttons">
+    <button type="action" name="act_combat" class="sheet-button0">Combat</button>
+    <button type="action" name="act_attributes" class="sheet-button1">Attributes</button>
+    <button type="action" name="act_inventory" class="sheet-button2">Inventory</button>
+    <button type="action" name="act_perks" class="sheet-button3">Perks</button>
+  </div>
+
+  <div class="sheet-combat">
+    <h2>Combat</h2>
+    <!-- ... (content omitted for brevity) ... -->
+  </div>
+
+  <div class="sheet-attributes">
+    <h2>Attributes</h2>
+    <!-- ... (content omitted for brevity) ... -->
+  </div>
+
+  <div class="sheet-inventory">
+    <h2>Inventory</h2>
+    <span>Inventory tab content goes here...</span>
+  </div>
+
+  <div class="sheet-perks">
+    <h2>Perks</h2>
+    <span>Perks tab content goes here...</span>
+  </div>
+</div>
+
+<script type="text/worker">
+  const buttonlist = ["act_combat", "act_attributes", "act_inventory", "act_perks"];
+  buttonlist.forEach(button => {
+    on(`clicked:${button}`, function() {
+      const tab = button.replace("act_", "");
+      setAttrs({ sheetTab: tab });
+    });
+  });
+
+  on("sheet:opened", function() {
+    getAttrs(["sheetTab"], function(values) {
+      const tab = values.sheetTab || "combat";
+      document.querySelector(".charsheet")?.setAttribute("data-tab", tab);
+    });
+  });
+</script>
+
+<style>
+  .sheet-combat,
+  .sheet-attributes,
+  .sheet-inventory,
+  .sheet-perks {
+    display: none;
+  }
+
+  .charsheet[data-tab="combat"] .sheet-combat,
+  .charsheet[data-tab="attributes"] .sheet-attributes,
+  .charsheet[data-tab="inventory"] .sheet-inventory,
+  .charsheet[data-tab="perks"] .sheet-perks {
+    display: block;
+  }
+</style>
