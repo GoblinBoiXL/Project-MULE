@@ -25,7 +25,7 @@
     <button type="action" name="act_combat" class="sheet-button0">Combat</button>
     <button type="action" name="act_attributes" class="sheet-button1">Attributes</button>
     <button type="action" name="act_inventory" class="sheet-button2">Inventory</button>
-    <button type="action" name="act_perks" class="sheet-button3">Perks</button
+    <button type="action" name="act_perks" class="sheet-button3">Perks</button>
     </div> 
 
        <!-- Tab Panels --> 
@@ -217,12 +217,14 @@
     <span>Perks tab content goes here...</span>
 </div>
     
-const buttonlist = ["act_combat", "act_attributes", "act_inventory", "act_perks"];
-buttonlist.forEach(button => {
-  on(`clicked:${button}`, function() {
-    setAttrs({
-      sheetTab: button.replace("act_", "")
+<script type="text/worker">
+  const buttonlist = ["act_combat", "act_attributes", "act_inventory", "act_perks"];
+  buttonlist.forEach(button => {
+    on(`clicked:${button}`, function() {
+      setAttrs({
+        sheetTab: button.replace("act_", "")
+      });
     });
   });
-});
+</script>
 
